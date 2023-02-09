@@ -1,0 +1,17 @@
+
+name: Test Project
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3   # https://github.com/marketplace?type=actions
+      - name: Install NodeJS 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install Dependencies
+        run: npm ci
+      - name: Run Tests
+        run: npm test
