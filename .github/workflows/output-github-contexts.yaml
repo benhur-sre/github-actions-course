@@ -1,0 +1,8 @@
+name: output information
+on: workflow_dispatch
+jobs:
+  info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output github context   # https://docs.github.com/en/actions/learn-github-actions/contexts
+        run: echo "${{ toJSON(github) }}"  # https://docs.github.com/en/actions/learn-github-actions/expressions
